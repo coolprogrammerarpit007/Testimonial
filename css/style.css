@@ -1,0 +1,202 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Color and Font Theme */
+
+/* ## Colors */
+
+/* ### Primary */
+
+/* Moderate violet: hsl(263, 55%, 52%) */
+/* Very dark grayish blue: hsl(217, 19%, 35%) */
+/* Very dark blackish blue: hsl(219, 29%, 14%) */
+/* White: hsl(0, 0%, 100%) */
+
+/* ### Neutral */
+
+/* Light gray: hsl(0, 0%, 81%) */
+/* Light grayish blue: hsl(210, 46%, 95%) */
+
+/* Note for text colors: */
+
+/* 1. "Verified Graduate" has the same color as the person's name with 50% opacity */
+/* 2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+/* ## Typography */
+
+/* ### Body Copy */
+
+/* - Font size: 13px */
+
+/* ### Font */
+
+/* - Weights: 500, 600 */
+
+/* ************************************ */
+/* ************************************ */
+/* ************************************ */
+
+/* Start of Styling */
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Displaying Testimonial Grid */
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Aigning the GRID ITEMS Indivully */
+.one,
+.four {
+  grid-column: span 2;
+}
+
+.three {
+  order: 1;
+}
+.five {
+  order: 2;
+  grid-row: -1/-3;
+  grid-column: 4/5;
+}
+
+/* Styling the testimonial sections */
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  background-color: hsl(263, 55%, 52%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.two {
+  background: hsl(217, 19%, 35%);
+}
+.three {
+  background-color: hsl(0, 0%, 81%);
+}
+.four {
+  background-color: hsl(219, 29%, 14%);
+}
+.five {
+  background: hsl(0, 0%, 81%);
+}
+
+.testimonial .person {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.testimonial .person > .img-container img {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.verified-student {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.verified-student .name {
+  color: hsl(0, 0%, 100%);
+}
+
+.verified-student .graduate {
+  color: hsl(0, 0%, 100%, 0.5);
+}
+
+.review .review-text {
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+
+.description .description-text {
+  color: hsl(0, 0%, 100%, 0.6);
+  font-size: 1.5rem;
+}
+
+.description-text::before,
+.description-text::after {
+  content: '"';
+}
+
+/* Adding The Media Query for the responsive design */
+
+@media (max-width: 768px) {
+  body {
+    padding: 4rem;
+  }
+  .testimonial-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    height: 100vh;
+  }
+
+  .testimonial {
+    gap: 1rem;
+  }
+  .one {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    order: 0;
+  }
+  .two {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    order: 0;
+  }
+  .three {
+    grid-column: 1/5;
+    grid-row: 3/4;
+    order: 0;
+  }
+  .four {
+    grid-column: 1/5;
+    grid-row: 4/5;
+    order: 0;
+  }
+  .five {
+    grid-column: 1/5;
+    grid-row: 5/-1;
+    order: 0;
+  }
+}
